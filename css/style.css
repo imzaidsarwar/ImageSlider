@@ -1,0 +1,83 @@
+body {
+    background-color: #98D2C0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.slider-container {
+    position: relative;
+    width: 90%; /* Makes it responsive */
+    max-width: 600px; /* Prevents it from being too wide */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 100%; /* Ensures full container width */
+    height: auto; /* Keeps aspect ratio */
+    min-height: 200px; /* Prevents tiny images */
+    max-height: 60vh; /* Limits overly tall images */
+    object-fit: contain; /* Ensures full image is visible */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Button container to keep buttons below the image */
+.button-container {
+    margin-top: 10px; /* Space between image and buttons */
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50%;
+    border: none;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* ✅ Media Queries for Full Responsiveness */
+@media (max-width: 768px) {
+    .slider-container {
+        width: 95%; /* Takes more space on smaller screens */
+    }
+
+    img {
+        min-height: 150px; /* Adjust image height for tablets */
+        max-height: 50vh;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    img {
+        min-height: 120px; /* Adjusts for smaller screens */
+        max-height: 40vh;
+    }
+
+    .button-container {
+        gap: 5px; /* Reduce spacing for small screens */
+    }
+
+    .btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
